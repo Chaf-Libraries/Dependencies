@@ -1,0 +1,25 @@
+[submodule "stb"]
+	path = stb
+	url = https://github.com/nothings/stb
+[submodule "vulkan"]
+	path = vulkan
+	url = https://github.com/KhronosGroup/Vulkan-Headers
+[submodule "vma"]
+	path = vma
+	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator
+[submodule "entt"]
+	path = entt
+	url = https://github.com/skypjack/entt
+[submodule "glm"]
+	path = glm
+	url = https://github.com/g-truc/glm
+[submodule "ImGuizmo"]
+	path = ImGuizmo
+	url = https://github.com/CedricGuillemet/ImGuizmo
+[submodule "imgui"]
+	path = imgui
+	url = https://github.com/Chaf-Libraries/imgui
+	branch = docking-layout
+[submodule "imgui-node-editor"]
+	path = imgui-node-editor
+	url = https://github.com/thedmd/imgui-node-editor

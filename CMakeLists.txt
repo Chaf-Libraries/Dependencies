@@ -61,11 +61,6 @@ target_include_directories(entt INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/entt/sing
 add_library(stb INTERFACE)
 target_include_directories(stb INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/stb")
 
-# yaml-cpp
-option(YAML_BUILD_SHARED_LIBS OFF)
-option(YAML_MSVC_SHARED_RT OFF)
-add_subdirectory(yaml-cpp)
-
 # glm
 add_library(glm INTERFACE)
 target_include_directories(glm INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/glm")

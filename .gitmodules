@@ -20,6 +20,3 @@
 	path = imgui
 	url = https://github.com/Chaf-Libraries/imgui
 	branch = docking-layout
-[submodule "imgui-node-editor"]
-	path = imgui-node-editor
-	url = https://github.com/thedmd/imgui-node-editor

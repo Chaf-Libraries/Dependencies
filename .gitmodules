@@ -26,3 +26,12 @@
 [submodule "ImFileDialog"]
 	path = ImFileDialog
 	url = https://github.com/Chaf-Libraries/ImFileDialog
+[submodule "yaml-cpp"]
+	path = yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp
+[submodule "eigen"]
+	path = eigen
+	url = https://gitlab.com/libeigen/eigen
+[submodule "cereal"]
+	path = cereal
+	url = https://github.com/USCiLab/cereal

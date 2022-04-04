@@ -88,7 +88,7 @@ target_include_directories(ImGuizmo PUBLIC ${IMGUIZMO_DIR})
 target_link_libraries(ImGuizmo imgui)
 
 # imgui-node-editor
-set(IMGUINODEEDITOR_DIR "${CMAKE_CURRENT_SOURCE_DIR}/imgui_node_editor")
+set(IMGUINODEEDITOR_DIR "${CMAKE_CURRENT_SOURCE_DIR}/imgui-node-editor")
 set(IMGUINODEEDITOR_FILES
     "${IMGUINODEEDITOR_DIR}/crude_json.cpp"
     "${IMGUINODEEDITOR_DIR}/crude_json.h"
@@ -127,3 +127,7 @@ target_link_libraries(ImFileDialog imgui stb)
 add_library(Eigen INTERFACE)
 set(EIGEN_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Eigen)
 target_include_directories(vulkan INTERFACE ${EIGEN_INCLUDE_DIR})
+
+# cereal
+add_library(cereal INTERFACE)
+target_include_directories(cereal INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/cereal/include)

@@ -24,12 +24,13 @@ elseif(UNIX)
 endif() 
 
 # vma
-add_subdirectory(vma)
-# add_library(vma INTERFACE)
-# set(VMA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/vma/include)
-# target_sources(vma INTERFACE ${VMA_DIR}/vk_mem_alloc.h)
-# target_include_directories(vma INTERFACE ${VMA_DIR})
-# target_link_libraries(vma INTERFACE vulkan)
+# add_subdirectory(vma)
+add_library(VulkanMemoryAllocator INTERFACE)
+set(VMA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/vma/include)
+target_sources(VulkanMemoryAllocator INTERFACE ${VMA_DIR}/vk_mem_alloc.h)
+target_include_directories(VulkanMemoryAllocator INTERFACE ${VMA_DIR})
+target_link_libraries(VulkanMemoryAllocator INTERFACE vulkan)
+target_compile_definitions(VulkanMemoryAllocator INTERFACE VMA_STATIC_VULKAN_FUNCTIONS)
 
 # imgui
 set(IMGUI_DIR "${CMAKE_CURRENT_SOURCE_DIR}/imgui")

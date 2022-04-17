@@ -24,13 +24,21 @@ elseif(UNIX)
 endif() 
 
 # vma
-# add_subdirectory(vma)
 add_library(VulkanMemoryAllocator INTERFACE)
 set(VMA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/vma/include)
 target_sources(VulkanMemoryAllocator INTERFACE ${VMA_DIR}/vk_mem_alloc.h)
 target_include_directories(VulkanMemoryAllocator INTERFACE ${VMA_DIR})
 target_link_libraries(VulkanMemoryAllocator INTERFACE vulkan)
 target_compile_definitions(VulkanMemoryAllocator INTERFACE VMA_STATIC_VULKAN_FUNCTIONS)
+
+# volk
+set(VOLK_DIR "${CMAKE_CURRENT_SOURCE_DIR}/volk")
+set(VOLK_FILES
+    "${VOLK_DIR}/volk.c"
+    "${VOLK_DIR}/volk.h")
+add_library(volk STATIC ${VOLK_FILES})
+target_link_libraries(volk PUBLIC vulkan)
+target_include_directories(volk PUBLIC ${VOLK_DIR})
 
 # imgui
 set(IMGUI_DIR "${CMAKE_CURRENT_SOURCE_DIR}/imgui")
@@ -52,7 +60,7 @@ set(IMGUI_FILES
     "${IMGUI_DIR}/backends/imgui_impl_sdl.cpp")
 add_library(imgui STATIC ${IMGUI_FILES})
 target_include_directories(imgui PUBLIC ${IMGUI_DIR} ${IMGUI_DIR}/backends)
-target_link_libraries(imgui SDL2::SDL2 volk::volk)
+target_link_libraries(imgui SDL2::SDL2 volk)
 
 #entt
 add_library(entt INTERFACE)

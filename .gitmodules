@@ -32,3 +32,6 @@
 [submodule "cereal"]
 	path = cereal
 	url = https://github.com/USCiLab/cereal
+[submodule "volk"]
+	path = volk
+	url = https://github.com/zeux/volk

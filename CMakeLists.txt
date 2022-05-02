@@ -101,4 +101,38 @@ if(NOT TARGET dxc)
 endif()
 
 # spirv-cross
+option(SPIRV_CROSS_CLI "" OFF)
+option(SPIRV_CROSS_ENABLE_CPP "" OFF)
+option(SPIRV_CROSS_ENABLE_C_API "" OFF)
+option(SPIRV_CROSS_ENABLE_MSL "" OFF)
+option(SPIRV_CROSS_ENABLE_TESTS "" OFF)
+option(SPIRV_CROSS_ENABLE_UTIL "" OFF)
 add_subdirectory(spirv_cross)
+set_target_properties(spirv-cross-core PROPERTIES FOLDER ${third_party_folder}/spirv_cross)
+set_target_properties(spirv-cross-glsl PROPERTIES FOLDER ${third_party_folder}/spirv_cross)
+set_target_properties(spirv-cross-hlsl PROPERTIES FOLDER ${third_party_folder}/spirv_cross)
+set_target_properties(spirv-cross-reflect PROPERTIES FOLDER ${third_party_folder}/spirv_cross)
+
+if(NOT TARGET imgui)
+    set(IMGUI_DIR "${CMAKE_CURRENT_SOURCE_DIR}/imgui")
+    set(IMGUI_FILES
+        "${IMGUI_DIR}/imgui.cpp"
+        "${IMGUI_DIR}/imgui_demo.cpp"
+        "${IMGUI_DIR}/imgui_draw.cpp"
+        "${IMGUI_DIR}/imgui_widgets.cpp"
+        "${IMGUI_DIR}/imgui_tables.cpp"
+        "${IMGUI_DIR}/imconfig.h"
+        "${IMGUI_DIR}/imgui.h"
+        "${IMGUI_DIR}/imgui_internal.h"
+        "${IMGUI_DIR}/imstb_rectpack.h"
+        "${IMGUI_DIR}/imstb_textedit.h"
+        "${IMGUI_DIR}/imstb_truetype.h"
+        "${IMGUI_DIR}/backends/imgui_impl_vulkan.h"
+        "${IMGUI_DIR}/backends/imgui_impl_vulkan.cpp"
+        "${IMGUI_DIR}/backends/imgui_impl_glfw.h"
+        "${IMGUI_DIR}/backends/imgui_impl_glfw.cpp")
+    add_library(imgui STATIC ${IMGUI_FILES})
+    target_include_directories(imgui PUBLIC ${IMGUI_DIR} ${IMGUI_DIR}/backends)
+    target_link_libraries(imgui glfw volk)
+    set_target_properties(imgui PROPERTIES FOLDER ${third_party_folder}/imgui)
+endif()

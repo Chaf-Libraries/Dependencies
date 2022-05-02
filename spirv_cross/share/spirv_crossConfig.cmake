@@ -1,8 +1,0 @@
-include("${CMAKE_CURRENT_LIST_DIR}/spirv_cross_core/cmake/spirv_cross_coreConfig.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/spirv_cross_glsl/cmake/spirv_cross_glslConfig.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/spirv_cross_cpp/cmake/spirv_cross_cppConfig.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/spirv_cross_hlsl/cmake/spirv_cross_hlslConfig.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/spirv_cross_msl/cmake/spirv_cross_mslConfig.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/spirv_cross_reflect/cmake/spirv_cross_reflectConfig.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/spirv_cross_util/cmake/spirv_cross_utilConfig.cmake")
-include("${CMAKE_CURRENT_LIST_DIR}/spirv_cross_c/cmake/spirv_cross_cConfig.cmake")

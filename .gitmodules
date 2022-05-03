@@ -28,3 +28,6 @@
 [submodule "imgui"]
 	path = imgui
 	url = https://github.com/Chaf-Libraries/imgui
+[submodule "rttr"]
+	path = rttr
+	url = https://github.com/rttrorg/rttr

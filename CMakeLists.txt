@@ -157,3 +157,27 @@ if(NOT TARGET rttr)
     add_subdirectory(rttr)
     set_target_properties(rttr_core_lib PROPERTIES FOLDER ${third_party_folder}/rttr)
 endif()
+
+if(NOT TARGET cereal)
+    add_library(cereal INTERFACE)
+    target_include_directories(cereal INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/cereal/include)
+    set_target_properties(cereal PROPERTIES FOLDER ${third_party_folder}/cereal)
+endif()
+
+if(NOT TARGET ImFileDialog)
+    set(IMFILEDIALOG_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ImFileDialog")
+    set(IMFILEDIALOG_FILES
+        "${IMFILEDIALOG_DIR}/ImFileDialog.cpp"
+        "${IMFILEDIALOG_DIR}/ImFileDialog.h")
+    add_library(ImFileDialog STATIC ${IMFILEDIALOG_FILES})
+    target_include_directories(ImFileDialog PUBLIC ${IMFILEDIALOG_DIR})
+    target_include_directories(ImFileDialog PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+    target_link_libraries(ImFileDialog imgui stb)
+    set_target_properties(ImFileDialog PROPERTIES FOLDER ${third_party_folder}/ImFileDialog)
+endif()
+
+if(NOT TARGET entt)
+    add_library(entt INTERFACE)
+    target_include_directories(entt INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/entt/single_include/entt")
+    set_target_properties(entt PROPERTIES FOLDER ${third_party_folder}/entt)
+endif()

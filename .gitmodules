@@ -31,3 +31,12 @@
 [submodule "rttr"]
 	path = rttr
 	url = https://github.com/rttrorg/rttr
+[submodule "cereal"]
+	path = cereal
+	url = https://github.com/USCiLab/cereal
+[submodule "ImFileDialog"]
+	path = ImFileDialog
+	url = https://github.com/Chaf-Libraries/ImFileDialog
+[submodule "entt"]
+	path = entt
+	url = https://github.com/skypjack/entt

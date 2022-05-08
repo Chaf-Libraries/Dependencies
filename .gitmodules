@@ -40,3 +40,6 @@
 [submodule "entt"]
 	path = entt
 	url = https://github.com/skypjack/entt
+[submodule "cgltf"]
+	path = cgltf
+	url = https://github.com/jkuhlmann/cgltf

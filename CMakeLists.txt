@@ -100,7 +100,7 @@ if(NOT TARGET glslang)
 endif()
 
 if(NOT TARGET dxc)
-    add_library(dxc INTERFACE)
+    add_library(dxc INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/dxc/bin/x64/dxil.dll )
     target_include_directories(dxc INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/dxc/inc)
     target_link_libraries(dxc INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/dxc/lib/x64/dxcompiler.lib)
     set_target_properties(dxc PROPERTIES FOLDER ${third_party_folder}/dxc)

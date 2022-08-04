@@ -79,6 +79,12 @@ if(NOT TARGET stb)
     set_target_properties(stb PROPERTIES FOLDER ${third_party_folder}/stb)
 endif()
 
+if(NOT TARGET D3D12MemoryAllocator)
+    add_subdirectory(D3D12MA)
+    target_include_directories(D3D12MemoryAllocator INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/D3D12MA/include)
+    set_target_properties(D3D12MemoryAllocator PROPERTIES FOLDER ${third_party_folder}/D3D12MA)
+    endif()
+
 if(NOT TARGET glslang)
     option(ENABLE_HLSL "" OFF)
     option(ENABLE_SPVREMAPPER "" OFF)

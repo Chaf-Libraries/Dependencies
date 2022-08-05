@@ -79,11 +79,19 @@ if(NOT TARGET stb)
     set_target_properties(stb PROPERTIES FOLDER ${third_party_folder}/stb)
 endif()
 
+if(NOT TARGET DirectX)
+    file(GLOB_RECURSE dx_sources CONFIGURE_DEPENDS  "${CMAKE_CURRENT_SOURCE_DIR}/directx/include/directx/*.h")
+    add_library(DirectX INTERFACE)
+    target_sources(DirectX INTERFACE ${dx_sources})
+    target_include_directories(DirectX INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/directx/include)
+    set_target_properties(DirectX PROPERTIES FOLDER ${third_party_folder}/DirectX)
+endif()
+
 if(NOT TARGET D3D12MemoryAllocator)
     add_subdirectory(D3D12MA)
     target_include_directories(D3D12MemoryAllocator INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/D3D12MA/include)
     set_target_properties(D3D12MemoryAllocator PROPERTIES FOLDER ${third_party_folder}/D3D12MA)
-    endif()
+endif()
 
 if(NOT TARGET glslang)
     option(ENABLE_HLSL "" OFF)
@@ -100,7 +108,7 @@ if(NOT TARGET glslang)
 endif()
 
 if(NOT TARGET dxc)
-    add_library(dxc INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/dxc/bin/x64/dxil.dll )
+    add_library(dxc INTERFACE)
     target_include_directories(dxc INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/dxc/inc)
     target_link_libraries(dxc INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/dxc/lib/x64/dxcompiler.lib)
     set_target_properties(dxc PROPERTIES FOLDER ${third_party_folder}/dxc)
@@ -118,6 +126,13 @@ set_target_properties(spirv-cross-core PROPERTIES FOLDER ${third_party_folder}/s
 set_target_properties(spirv-cross-glsl PROPERTIES FOLDER ${third_party_folder}/spirv_cross)
 set_target_properties(spirv-cross-hlsl PROPERTIES FOLDER ${third_party_folder}/spirv_cross)
 set_target_properties(spirv-cross-reflect PROPERTIES FOLDER ${third_party_folder}/spirv_cross)
+
+# spirv-reflect
+option(SPIRV_REFLECT_EXAMPLES "" OFF)
+option(SPIRV_REFLECT_EXECUTABLE "" OFF)
+option(SPIRV_REFLECT_STATIC_LIB "" ON)
+add_subdirectory(spirv_reflect)
+set_target_properties(spirv-reflect-static PROPERTIES FOLDER ${third_party_folder}/spirv_reflect)
 
 if(NOT TARGET imgui)
     set(IMGUI_DIR "${CMAKE_CURRENT_SOURCE_DIR}/imgui")

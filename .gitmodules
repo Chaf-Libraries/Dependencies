@@ -49,3 +49,9 @@
 [submodule "D3D12MA"]
 	path = D3D12MA
 	url = https://github.com/GPUOpen-LibrariesAndSDKs/D3D12MemoryAllocator
+[submodule "directx"]
+	path = directx
+	url = https://github.com/microsoft/DirectX-Headers
+[submodule "spirv_reflect"]
+	path = spirv_reflect
+	url = https://github.com/KhronosGroup/SPIRV-Reflect

@@ -228,3 +228,11 @@ target_include_directories(sol2 INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/sol2/lua"
 target_include_directories(sol2 INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/sol2")
 set_target_properties(sol2 PROPERTIES FOLDER ${third_party_folder}/sol2)
 endif()
+
+if(NOT TARGET nativefiledialog)
+    file(GLOB_RECURSE nativefiledialog_sources CONFIGURE_DEPENDS  "${CMAKE_CURRENT_SOURCE_DIR}/nativefiledialog/src/*.h" "${CMAKE_CURRENT_SOURCE_DIR}/nativefiledialog/src/*.cpp" "${CMAKE_CURRENT_SOURCE_DIR}/nativefiledialog/src/nfd_common.c")
+    add_library(nativefiledialog STATIC ${nativefiledialog_sources})
+    target_include_directories(nativefiledialog PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/nativefiledialog/src/include)
+    target_include_directories(nativefiledialog PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/nativefiledialog/src)
+    set_target_properties(nativefiledialog PROPERTIES FOLDER ${third_party_folder}/nativefiledialog)
+endif()

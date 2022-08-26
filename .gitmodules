@@ -55,3 +55,6 @@
 [submodule "spirv_reflect"]
 	path = spirv_reflect
 	url = https://github.com/KhronosGroup/SPIRV-Reflect
+[submodule "nativefiledialog"]
+	path = nativefiledialog
+	url = https://github.com/mlabbe/nativefiledialog

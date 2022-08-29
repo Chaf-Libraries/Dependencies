@@ -79,14 +79,6 @@ if(NOT TARGET stb)
     set_target_properties(stb PROPERTIES FOLDER ${third_party_folder}/stb)
 endif()
 
-if(NOT TARGET DirectX)
-    file(GLOB_RECURSE dx_sources CONFIGURE_DEPENDS  "${CMAKE_CURRENT_SOURCE_DIR}/directx/include/directx/*.h")
-    add_library(DirectX INTERFACE)
-    target_sources(DirectX INTERFACE ${dx_sources})
-    target_include_directories(DirectX INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/directx/include)
-    set_target_properties(DirectX PROPERTIES FOLDER ${third_party_folder}/DirectX)
-endif()
-
 if(NOT TARGET D3D12MemoryAllocator)
     add_subdirectory(D3D12MA)
     target_include_directories(D3D12MemoryAllocator INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/D3D12MA/include)
@@ -183,18 +175,6 @@ if(NOT TARGET cereal)
     add_library(cereal INTERFACE)
     target_include_directories(cereal INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/cereal/include)
     set_target_properties(cereal PROPERTIES FOLDER ${third_party_folder}/cereal)
-endif()
-
-if(NOT TARGET ImFileDialog)
-    set(IMFILEDIALOG_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ImFileDialog")
-    set(IMFILEDIALOG_FILES
-        "${IMFILEDIALOG_DIR}/ImFileDialog.cpp"
-        "${IMFILEDIALOG_DIR}/ImFileDialog.h")
-    add_library(ImFileDialog STATIC ${IMFILEDIALOG_FILES})
-    target_include_directories(ImFileDialog PUBLIC ${IMFILEDIALOG_DIR})
-    target_include_directories(ImFileDialog PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-    target_link_libraries(ImFileDialog imgui stb)
-    set_target_properties(ImFileDialog PROPERTIES FOLDER ${third_party_folder}/ImFileDialog)
 endif()
 
 if(NOT TARGET entt)

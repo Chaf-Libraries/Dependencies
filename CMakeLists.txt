@@ -216,3 +216,7 @@ if(NOT TARGET nativefiledialog)
     target_include_directories(nativefiledialog PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/nativefiledialog/src)
     set_target_properties(nativefiledialog PROPERTIES FOLDER ${third_party_folder}/nativefiledialog)
 endif()
+
+add_subdirectory(antlr)
+set_target_properties(ANTLR_Runtime PROPERTIES FOLDER ${third_party_folder}/ANTLR)
+set_target_properties(ANTLR_CPP14Parser PROPERTIES FOLDER ${third_party_folder}/ANTLR)

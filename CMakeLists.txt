@@ -220,3 +220,7 @@ endif()
 add_subdirectory(antlr)
 set_target_properties(ANTLR_Runtime PROPERTIES FOLDER ${third_party_folder}/ANTLR)
 set_target_properties(ANTLR_CPP14Parser PROPERTIES FOLDER ${third_party_folder}/ANTLR)
+
+add_library(glad STATIC "${CMAKE_CURRENT_SOURCE_DIR}/glad/src/glad.c")
+target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
+set_target_properties(glad PROPERTIES FOLDER ${third_party_folder}/glad)

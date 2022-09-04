@@ -1,11 +1,13 @@
 
-// Generated from .\CPP14Parser.g4 by ANTLR 4.10.1
+// Generated from CPP14Parser.g4 by ANTLR 4.8
 
 #pragma once
 
 
 #include "antlr4-runtime.h"
 #include "CPP14Parser.h"
+
+
 
 
 /**
@@ -245,12 +247,6 @@ public:
   virtual void enterTrailingTypeSpecifierSeq(CPP14Parser::TrailingTypeSpecifierSeqContext *ctx) = 0;
   virtual void exitTrailingTypeSpecifierSeq(CPP14Parser::TrailingTypeSpecifierSeqContext *ctx) = 0;
 
-  virtual void enterSimpleTypeLengthModifier(CPP14Parser::SimpleTypeLengthModifierContext *ctx) = 0;
-  virtual void exitSimpleTypeLengthModifier(CPP14Parser::SimpleTypeLengthModifierContext *ctx) = 0;
-
-  virtual void enterSimpleTypeSignednessModifier(CPP14Parser::SimpleTypeSignednessModifierContext *ctx) = 0;
-  virtual void exitSimpleTypeSignednessModifier(CPP14Parser::SimpleTypeSignednessModifierContext *ctx) = 0;
-
   virtual void enterSimpleTypeSpecifier(CPP14Parser::SimpleTypeSpecifierContext *ctx) = 0;
   virtual void exitSimpleTypeSpecifier(CPP14Parser::SimpleTypeSpecifierContext *ctx) = 0;
 
@@ -305,8 +301,8 @@ public:
   virtual void enterNamespaceAliasDefinition(CPP14Parser::NamespaceAliasDefinitionContext *ctx) = 0;
   virtual void exitNamespaceAliasDefinition(CPP14Parser::NamespaceAliasDefinitionContext *ctx) = 0;
 
-  virtual void enterQualifiednamespacespecifier(CPP14Parser::QualifiednamespacespecifierContext *ctx) = 0;
-  virtual void exitQualifiednamespacespecifier(CPP14Parser::QualifiednamespacespecifierContext *ctx) = 0;
+  virtual void enterQualifiedNamespaceSpecifier(CPP14Parser::QualifiedNamespaceSpecifierContext *ctx) = 0;
+  virtual void exitQualifiedNamespaceSpecifier(CPP14Parser::QualifiedNamespaceSpecifierContext *ctx) = 0;
 
   virtual void enterUsingDeclaration(CPP14Parser::UsingDeclarationContext *ctx) = 0;
   virtual void exitUsingDeclaration(CPP14Parser::UsingDeclarationContext *ctx) = 0;
@@ -407,6 +403,21 @@ public:
   virtual void enterParameterDeclarationList(CPP14Parser::ParameterDeclarationListContext *ctx) = 0;
   virtual void exitParameterDeclarationList(CPP14Parser::ParameterDeclarationListContext *ctx) = 0;
 
+  virtual void enterProSimpleTypeSpecifier(CPP14Parser::ProSimpleTypeSpecifierContext *ctx) = 0;
+  virtual void exitProSimpleTypeSpecifier(CPP14Parser::ProSimpleTypeSpecifierContext *ctx) = 0;
+
+  virtual void enterNonSimpleTypeDeclSpecifier(CPP14Parser::NonSimpleTypeDeclSpecifierContext *ctx) = 0;
+  virtual void exitNonSimpleTypeDeclSpecifier(CPP14Parser::NonSimpleTypeDeclSpecifierContext *ctx) = 0;
+
+  virtual void enterPreDeclSpecifierSeq(CPP14Parser::PreDeclSpecifierSeqContext *ctx) = 0;
+  virtual void exitPreDeclSpecifierSeq(CPP14Parser::PreDeclSpecifierSeqContext *ctx) = 0;
+
+  virtual void enterPostDeclSpecifierSeq(CPP14Parser::PostDeclSpecifierSeqContext *ctx) = 0;
+  virtual void exitPostDeclSpecifierSeq(CPP14Parser::PostDeclSpecifierSeqContext *ctx) = 0;
+
+  virtual void enterProDeclSpecifierSeq(CPP14Parser::ProDeclSpecifierSeqContext *ctx) = 0;
+  virtual void exitProDeclSpecifierSeq(CPP14Parser::ProDeclSpecifierSeqContext *ctx) = 0;
+
   virtual void enterParameterDeclaration(CPP14Parser::ParameterDeclarationContext *ctx) = 0;
   virtual void exitParameterDeclaration(CPP14Parser::ParameterDeclarationContext *ctx) = 0;
 
@@ -452,8 +463,8 @@ public:
   virtual void enterMemberSpecification(CPP14Parser::MemberSpecificationContext *ctx) = 0;
   virtual void exitMemberSpecification(CPP14Parser::MemberSpecificationContext *ctx) = 0;
 
-  virtual void enterMemberdeclaration(CPP14Parser::MemberdeclarationContext *ctx) = 0;
-  virtual void exitMemberdeclaration(CPP14Parser::MemberdeclarationContext *ctx) = 0;
+  virtual void enterMemberDeclaration(CPP14Parser::MemberDeclarationContext *ctx) = 0;
+  virtual void exitMemberDeclaration(CPP14Parser::MemberDeclarationContext *ctx) = 0;
 
   virtual void enterMemberDeclaratorList(CPP14Parser::MemberDeclaratorListContext *ctx) = 0;
   virtual void exitMemberDeclaratorList(CPP14Parser::MemberDeclaratorListContext *ctx) = 0;
@@ -475,6 +486,9 @@ public:
 
   virtual void enterBaseSpecifierList(CPP14Parser::BaseSpecifierListContext *ctx) = 0;
   virtual void exitBaseSpecifierList(CPP14Parser::BaseSpecifierListContext *ctx) = 0;
+
+  virtual void enterBaseSpecifierX(CPP14Parser::BaseSpecifierXContext *ctx) = 0;
+  virtual void exitBaseSpecifierX(CPP14Parser::BaseSpecifierXContext *ctx) = 0;
 
   virtual void enterBaseSpecifier(CPP14Parser::BaseSpecifierContext *ctx) = 0;
   virtual void exitBaseSpecifier(CPP14Parser::BaseSpecifierContext *ctx) = 0;
@@ -584,9 +598,7 @@ public:
   virtual void enterTheOperator(CPP14Parser::TheOperatorContext *ctx) = 0;
   virtual void exitTheOperator(CPP14Parser::TheOperatorContext *ctx) = 0;
 
-  virtual void enterLiteral(CPP14Parser::LiteralContext *ctx) = 0;
-  virtual void exitLiteral(CPP14Parser::LiteralContext *ctx) = 0;
-
 
 };
+
 

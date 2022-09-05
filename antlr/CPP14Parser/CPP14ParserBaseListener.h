@@ -1,13 +1,11 @@
 
-// Generated from CPP14Parser.g4 by ANTLR 4.8
+// Generated from .\CPP14Parser.g4 by ANTLR 4.10.1
 
 #pragma once
 
 
 #include "antlr4-runtime.h"
 #include "CPP14ParserListener.h"
-
-
 
 
 /**
@@ -249,6 +247,12 @@ public:
   virtual void enterTrailingTypeSpecifierSeq(CPP14Parser::TrailingTypeSpecifierSeqContext * /*ctx*/) override { }
   virtual void exitTrailingTypeSpecifierSeq(CPP14Parser::TrailingTypeSpecifierSeqContext * /*ctx*/) override { }
 
+  virtual void enterSimpleTypeLengthModifier(CPP14Parser::SimpleTypeLengthModifierContext * /*ctx*/) override { }
+  virtual void exitSimpleTypeLengthModifier(CPP14Parser::SimpleTypeLengthModifierContext * /*ctx*/) override { }
+
+  virtual void enterSimpleTypeSignednessModifier(CPP14Parser::SimpleTypeSignednessModifierContext * /*ctx*/) override { }
+  virtual void exitSimpleTypeSignednessModifier(CPP14Parser::SimpleTypeSignednessModifierContext * /*ctx*/) override { }
+
   virtual void enterSimpleTypeSpecifier(CPP14Parser::SimpleTypeSpecifierContext * /*ctx*/) override { }
   virtual void exitSimpleTypeSpecifier(CPP14Parser::SimpleTypeSpecifierContext * /*ctx*/) override { }
 
@@ -303,8 +307,8 @@ public:
   virtual void enterNamespaceAliasDefinition(CPP14Parser::NamespaceAliasDefinitionContext * /*ctx*/) override { }
   virtual void exitNamespaceAliasDefinition(CPP14Parser::NamespaceAliasDefinitionContext * /*ctx*/) override { }
 
-  virtual void enterQualifiedNamespaceSpecifier(CPP14Parser::QualifiedNamespaceSpecifierContext * /*ctx*/) override { }
-  virtual void exitQualifiedNamespaceSpecifier(CPP14Parser::QualifiedNamespaceSpecifierContext * /*ctx*/) override { }
+  virtual void enterQualifiednamespacespecifier(CPP14Parser::QualifiednamespacespecifierContext * /*ctx*/) override { }
+  virtual void exitQualifiednamespacespecifier(CPP14Parser::QualifiednamespacespecifierContext * /*ctx*/) override { }
 
   virtual void enterUsingDeclaration(CPP14Parser::UsingDeclarationContext * /*ctx*/) override { }
   virtual void exitUsingDeclaration(CPP14Parser::UsingDeclarationContext * /*ctx*/) override { }
@@ -405,21 +409,6 @@ public:
   virtual void enterParameterDeclarationList(CPP14Parser::ParameterDeclarationListContext * /*ctx*/) override { }
   virtual void exitParameterDeclarationList(CPP14Parser::ParameterDeclarationListContext * /*ctx*/) override { }
 
-  virtual void enterProSimpleTypeSpecifier(CPP14Parser::ProSimpleTypeSpecifierContext * /*ctx*/) override { }
-  virtual void exitProSimpleTypeSpecifier(CPP14Parser::ProSimpleTypeSpecifierContext * /*ctx*/) override { }
-
-  virtual void enterNonSimpleTypeDeclSpecifier(CPP14Parser::NonSimpleTypeDeclSpecifierContext * /*ctx*/) override { }
-  virtual void exitNonSimpleTypeDeclSpecifier(CPP14Parser::NonSimpleTypeDeclSpecifierContext * /*ctx*/) override { }
-
-  virtual void enterPreDeclSpecifierSeq(CPP14Parser::PreDeclSpecifierSeqContext * /*ctx*/) override { }
-  virtual void exitPreDeclSpecifierSeq(CPP14Parser::PreDeclSpecifierSeqContext * /*ctx*/) override { }
-
-  virtual void enterPostDeclSpecifierSeq(CPP14Parser::PostDeclSpecifierSeqContext * /*ctx*/) override { }
-  virtual void exitPostDeclSpecifierSeq(CPP14Parser::PostDeclSpecifierSeqContext * /*ctx*/) override { }
-
-  virtual void enterProDeclSpecifierSeq(CPP14Parser::ProDeclSpecifierSeqContext * /*ctx*/) override { }
-  virtual void exitProDeclSpecifierSeq(CPP14Parser::ProDeclSpecifierSeqContext * /*ctx*/) override { }
-
   virtual void enterParameterDeclaration(CPP14Parser::ParameterDeclarationContext * /*ctx*/) override { }
   virtual void exitParameterDeclaration(CPP14Parser::ParameterDeclarationContext * /*ctx*/) override { }
 
@@ -465,8 +454,8 @@ public:
   virtual void enterMemberSpecification(CPP14Parser::MemberSpecificationContext * /*ctx*/) override { }
   virtual void exitMemberSpecification(CPP14Parser::MemberSpecificationContext * /*ctx*/) override { }
 
-  virtual void enterMemberDeclaration(CPP14Parser::MemberDeclarationContext * /*ctx*/) override { }
-  virtual void exitMemberDeclaration(CPP14Parser::MemberDeclarationContext * /*ctx*/) override { }
+  virtual void enterMemberdeclaration(CPP14Parser::MemberdeclarationContext * /*ctx*/) override { }
+  virtual void exitMemberdeclaration(CPP14Parser::MemberdeclarationContext * /*ctx*/) override { }
 
   virtual void enterMemberDeclaratorList(CPP14Parser::MemberDeclaratorListContext * /*ctx*/) override { }
   virtual void exitMemberDeclaratorList(CPP14Parser::MemberDeclaratorListContext * /*ctx*/) override { }
@@ -488,9 +477,6 @@ public:
 
   virtual void enterBaseSpecifierList(CPP14Parser::BaseSpecifierListContext * /*ctx*/) override { }
   virtual void exitBaseSpecifierList(CPP14Parser::BaseSpecifierListContext * /*ctx*/) override { }
-
-  virtual void enterBaseSpecifierX(CPP14Parser::BaseSpecifierXContext * /*ctx*/) override { }
-  virtual void exitBaseSpecifierX(CPP14Parser::BaseSpecifierXContext * /*ctx*/) override { }
 
   virtual void enterBaseSpecifier(CPP14Parser::BaseSpecifierContext * /*ctx*/) override { }
   virtual void exitBaseSpecifier(CPP14Parser::BaseSpecifierContext * /*ctx*/) override { }
@@ -600,6 +586,9 @@ public:
   virtual void enterTheOperator(CPP14Parser::TheOperatorContext * /*ctx*/) override { }
   virtual void exitTheOperator(CPP14Parser::TheOperatorContext * /*ctx*/) override { }
 
+  virtual void enterLiteral(CPP14Parser::LiteralContext * /*ctx*/) override { }
+  virtual void exitLiteral(CPP14Parser::LiteralContext * /*ctx*/) override { }
+
 
   virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
   virtual void exitEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }
@@ -607,5 +596,4 @@ public:
   virtual void visitErrorNode(antlr4::tree::ErrorNode * /*node*/) override { }
 
 };
-
 

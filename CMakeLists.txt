@@ -159,7 +159,7 @@ if(NOT TARGET imnode)
 endif()
 
 if(NOT TARGET implot)
-    file(GLOB_RECURSE implot_sources CONFIGURE_DEPENDS  "${CMAKE_CURRENT_SOURCE_DIR}/implot/*")
+    file(GLOB implot_sources CONFIGURE_DEPENDS  "${CMAKE_CURRENT_SOURCE_DIR}/implot/*")
     add_library(implot STATIC ${implot_sources})
     target_include_directories(implot INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/implot)
     target_link_libraries(implot imgui)

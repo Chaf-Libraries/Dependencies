@@ -14,6 +14,7 @@ endif()
 
 if(NOT TARGET spdlog)
     option(SPDLOG_BUILD_EXAMPLE "" OFF)
+    option(SPDLOG_BUILD_SHARED "" ON)
     option(SPDLOG_INSTALL "" OFF)
     add_subdirectory(spdlog)
     set_target_properties(spdlog PROPERTIES FOLDER ${third_party_folder}/spdlog)
@@ -232,3 +233,5 @@ set_target_properties(ANTLR_CPP14Parser PROPERTIES FOLDER ${third_party_folder}/
 add_library(glad STATIC "${CMAKE_CURRENT_SOURCE_DIR}/glad/src/glad.c")
 target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
 set_target_properties(glad PROPERTIES FOLDER ${third_party_folder}/glad)
+
+add_library(Mustache INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/Mustache/mustache.hpp")

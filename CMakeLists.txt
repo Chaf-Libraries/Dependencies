@@ -235,3 +235,4 @@ target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
 set_target_properties(glad PROPERTIES FOLDER ${third_party_folder}/glad)
 
 add_library(Mustache INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/Mustache/mustache.hpp")
+set_target_properties(Mustache PROPERTIES FOLDER ${third_party_folder}/Mustache)

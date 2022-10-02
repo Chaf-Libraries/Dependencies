@@ -73,13 +73,6 @@ if(NOT TARGET volk)
     set_target_properties(volk PROPERTIES FOLDER ${third_party_folder}/volk)
 endif()
 
-if(NOT TARGET stb)
-    file(GLOB_RECURSE stb_sources CONFIGURE_DEPENDS  "${CMAKE_CURRENT_SOURCE_DIR}/stb/*.h")
-    add_library(stb INTERFACE ${stb_sources})
-    target_include_directories(stb INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/stb)
-    set_target_properties(stb PROPERTIES FOLDER ${third_party_folder}/stb)
-endif()
-
 if(NOT TARGET D3D12MemoryAllocator)
     add_subdirectory(D3D12MA)
     target_include_directories(D3D12MemoryAllocator INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/D3D12MA/include)
@@ -226,12 +219,6 @@ if(NOT TARGET nativefiledialog)
     set_target_properties(nativefiledialog PROPERTIES FOLDER ${third_party_folder}/nativefiledialog)
 endif()
 
-add_subdirectory(antlr)
-set_target_properties(ANTLR_Runtime PROPERTIES FOLDER ${third_party_folder}/ANTLR)
-set_target_properties(ANTLR_CPP14Parser PROPERTIES FOLDER ${third_party_folder}/ANTLR)
-
 add_library(glad STATIC "${CMAKE_CURRENT_SOURCE_DIR}/glad/src/glad.c")
 target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
 set_target_properties(glad PROPERTIES FOLDER ${third_party_folder}/glad)
-
-add_library(Mustache INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/Mustache/mustache.hpp")

@@ -90,8 +90,6 @@ if(NOT TARGET glslang)
     set_target_properties(OGLCompiler PROPERTIES FOLDER ${third_party_folder}/glslang)
     set_target_properties(OSDependent PROPERTIES FOLDER ${third_party_folder}/glslang)
     set_target_properties(SPIRV PROPERTIES FOLDER ${third_party_folder}/glslang)
-    set_target_properties(glslang-default-resource-limits PROPERTIES FOLDER ${third_party_folder}/glslang)
-    set_target_properties(glslangValidator PROPERTIES FOLDER ${third_party_folder}/glslang)
 endif()
 
 if(NOT TARGET dxc)

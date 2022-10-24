@@ -221,3 +221,5 @@ endif()
 add_library(glad STATIC "${CMAKE_CURRENT_SOURCE_DIR}/glad/src/glad.c")
 target_include_directories(glad PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/glad/include)
 set_target_properties(glad PROPERTIES FOLDER ${third_party_folder}/glad)
+
+add_subdirectory(pybind11)

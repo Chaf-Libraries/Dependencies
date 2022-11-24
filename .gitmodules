@@ -1,21 +1,12 @@
-[submodule "glfw"]
-	path = glfw
-	url = https://github.com/glfw/glfw
 [submodule "glm"]
 	path = glm
 	url = https://github.com/g-truc/glm
-[submodule "spdlog"]
-	path = spdlog
-	url = https://github.com/gabime/spdlog
 [submodule "volk"]
 	path = volk
 	url = https://github.com/zeux/volk
 [submodule "vulkan"]
 	path = vulkan
 	url = https://github.com/KhronosGroup/Vulkan-Headers
-[submodule "glslang"]
-	path = glslang
-	url = https://github.com/KhronosGroup/glslang
 [submodule "vma"]
 	path = vma
 	url = https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator
